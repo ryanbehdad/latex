@@ -21,14 +21,18 @@ def create_pdf(filename):
     process.wait()
 
 ####################### Main #######################
+
+# Read the data
 df_original = pd.read_csv(csv_file)
 df = df_original.copy()
+
+# Calculte DCF
 df['DCF'] = df.apply(lambda row: row['CF'] / (1.1**row['Months Passed']), axis = 1)
 SDCF = df['DCF'].sum()
-if SDCF>0:
-    sentence = f'The project has a profit of ${SDCF:,.0f}'
+if SDCF>=0:
+    sentence = f'The project has a profit of ${SDCF:,.0f}.'
 else:
-    sentence = f'The project has a loss of ${-1 * SDCF:,.0f}'
+    sentence = f'The project has a loss of ${-1 * SDCF:,.0f}.'
 
 # Create document
 doc = pl.Document()
