@@ -43,6 +43,7 @@ doc.append(pl.NoEscape(r'\maketitle'))
 
 # Create section 1
 with doc.create(pl.Section('Data')):
+    doc.append('The cash flow data is as follows.')
     with doc.create(pl.Table(position='htbp')) as table:
         table.add_caption('Cash Flow')
         table.append(pl.Command('centering'))
@@ -54,6 +55,7 @@ with doc.create(pl.Section('Conclusion')):
 
 # Create section 3
 with doc.create(pl.Section('Appendix')):
+    doc.append('The discounted cash flow is shown in the table below.')
     with doc.create(pl.Table(position='htbp')) as table:
         table.add_caption('Discounted Cash Flow')
         table.append(pl.Command('centering'))
