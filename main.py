@@ -3,11 +3,13 @@ import pylatex as pl
 import pandas as pd
 import subprocess
 
+####################### Arguments #######################
 file_name = 'report'
 csv_file = 'data.csv'
 threshold = 2_000_000_000
 latex_path = 'C:/Users/ryan.behdad/AppData/Local/Programs/MiKTeX 2.9/miktex/bin/x64/'
 
+####################### Main #######################
 df = pd.read_csv(csv_file)
 df['Double CF'] = df['CF'] * 2
 if df['Double CF'].sum() > threshold:
@@ -25,7 +27,6 @@ with doc.create(pl.Section('Results')):
         table.append(pl.NoEscape(df.to_latex(escape=False, index=False)))
     
     doc.append(sentence)
-
 
 def create_pdf(filename):
     input_filename = file_name + '.tex'
