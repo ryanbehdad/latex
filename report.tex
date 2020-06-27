@@ -1,0 +1,65 @@
+\documentclass{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{booktabs}%
+%
+\title{Economic Analysis}%
+\author{Ryan Behdad}%
+\date{\today}%
+%
+\begin{document}%
+\normalsize%
+\maketitle%
+\section{Data}%
+\label{sec:Data}%
+The cash flow data is as follows.%
+
+
+\begin{table}[htbp]%
+\caption{Cash Flow}%
+\centering%
+\begin{tabular}{rrrrr}
+\toprule
+   CF &  Year &  Month &  Day &  Months Passed \\
+\midrule
+-5000 &    92 &      4 &   25 &            0.0 \\
+-1000 &    92 &     12 &   27 &            8.1 \\
+ 2000 &    93 &      1 &   25 &            9.0 \\
+ 3000 &    93 &      3 &   31 &           11.2 \\
+\bottomrule
+\end{tabular}
+%
+\end{table}
+
+%
+\section{Conclusion}%
+\label{sec:Conclusion}%
+The project has a loss of \$3,582
+
+%
+\section{Appendix}%
+\label{sec:Appendix}%
+The discounted cash flow is shown in the table below.%
+
+
+\begin{table}[htbp]%
+\caption{Discounted Cash Flow}%
+\centering%
+\begin{tabular}{rrrrrr}
+\toprule
+   CF &  Year &  Month &  Day &  Months Passed &          DCF \\
+\midrule
+-5000 &    92 &      4 &   25 &            0.0 & -5000.000000 \\
+-1000 &    92 &     12 &   27 &            8.1 &  -462.082212 \\
+ 2000 &    93 &      1 &   25 &            9.0 &   848.195237 \\
+ 3000 &    93 &      3 &   31 &           11.2 &  1031.628142 \\
+\bottomrule
+\end{tabular}
+%
+\end{table}
+
+%
+\end{document}
