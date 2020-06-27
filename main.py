@@ -1,4 +1,3 @@
-import numpy as np
 import pylatex as pl
 import pandas as pd
 import subprocess
