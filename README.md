@@ -3,6 +3,6 @@ This is a quick investigation on how to generate Latex documents (and PDFs) in P
 
 To run the main.py, first do the following steps:
 * Install [PyLaTeX](https://jeltef.github.io/PyLaTeX) python library
- * pip install pylatex
+<code>pip install pylatex</code>
 * Install [MiKTeX](https://miktex.org/download)
 * Update the latex_path variable value in the main.py to where latex.exe can be found
