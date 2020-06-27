@@ -6,16 +6,18 @@ import subprocess
 ####################### Arguments #######################
 file_name = 'report'
 csv_file = 'data.csv'
-threshold = 0
 latex_path = 'C:/Users/ryan.behdad/AppData/Local/Programs/MiKTeX 2.9/miktex/bin/x64/'
 
 ####################### Main #######################
 df = pd.read_csv(csv_file)
-df['Double CF'] = df['CF'] * 2
-if df['Double CF'].sum() > threshold:
-    sentence = 'The project has a profit of ' + str(df['Double CF'].sum())
+# Cash_Flow[‘DCF’] = Cash_Flow[‘CF’]/(1.1**Cash_Flow[‘Months_Passed’])
+# Calculate Cash_Flow[‘DCF’].sum() and name it SDCF
+df['DCF'] = df.apply(lambda row: row['CF'] / (1.1**row['Months Passed']), axis = 1)
+SDCF = df['DCF'].sum()
+if SDCF>0:
+    sentence = f'The project has a profit of ${SDCF:,.0f}'
 else:
-    sentence = 'The project has a loss of ' + str(-1 * df['Double CF'].sum())
+    sentence = f'The project has a loss of ${-1 * SDCF:,.0f}'
 
 doc = pl.Document()
 doc.packages.append(pl.Package('booktabs'))
