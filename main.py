@@ -6,16 +6,16 @@ import subprocess
 ####################### Arguments #######################
 file_name = 'report'
 csv_file = 'data.csv'
-threshold = 2_000_000_000
+threshold = 0
 latex_path = 'C:/Users/ryan.behdad/AppData/Local/Programs/MiKTeX 2.9/miktex/bin/x64/'
 
 ####################### Main #######################
 df = pd.read_csv(csv_file)
 df['Double CF'] = df['CF'] * 2
 if df['Double CF'].sum() > threshold:
-    sentence = 'The profit of this project is ' + str(df['Double CF'].sum())
+    sentence = 'The project has a profit of ' + str(df['Double CF'].sum())
 else:
-    sentence = 'The loss of this project is ' + str(-1 * df['Double CF'].sum())
+    sentence = 'The project has a loss of ' + str(-1 * df['Double CF'].sum())
 
 doc = pl.Document()
 doc.packages.append(pl.Package('booktabs'))
