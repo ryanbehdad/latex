@@ -6,3 +6,5 @@ To run the main.py, first do the following steps:
 <code>pip install pylatex</code>
 * Install [MiKTeX](https://miktex.org/download)
 * Update the latex_path variable value in the main.py to where latex.exe can be found
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ryanbehdad/latex/blob/master/main.py)

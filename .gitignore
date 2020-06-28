@@ -1,0 +1,6 @@
+*.orig
+*.zip
+*.log
+*.aux
+**/.ipynb_checkpoints/*.*
+venv
